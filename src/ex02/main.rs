@@ -1,0 +1,17 @@
+#[cfg(test)]
+mod gray_code {
+    use crate::ex02::gray_code::gray_code;
+
+    #[test]
+    fn t_0_to_8() {
+        assert_eq!(gray_code(0), 0);
+        assert_eq!(gray_code(1), 1);
+        assert_eq!(gray_code(2), 3);
+        assert_eq!(gray_code(3), 2);
+        assert_eq!(gray_code(4), 6);
+        assert_eq!(gray_code(5), 7);
+        assert_eq!(gray_code(6), 5);
+        assert_eq!(gray_code(7), 4);
+        assert_eq!(gray_code(8), 12);
+    }
+}
