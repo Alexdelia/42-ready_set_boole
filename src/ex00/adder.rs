@@ -1,4 +1,3 @@
-// add 2 u32 without using + operator
 pub fn adder(a: u32, b: u32) -> u32 {
     let mut x = a;
     let mut carry = b;

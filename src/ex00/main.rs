@@ -26,7 +26,7 @@ mod adder {
     fn two_max() {
         assert_eq!(
             adder(u32::max_value(), u32::max_value()),
-            u32::max_value() - 1
+            u32::max_value() + u32::max_value()
         );
     }
 
@@ -37,6 +37,6 @@ mod adder {
 
     #[test]
     fn one_max_reverse() {
-        assert_eq!(adder(42, u32::max_value()), u32::max_value() + 42);
+        assert_eq!(adder(42, u32::max_value()), 42 + u32::max_value());
     }
 }
