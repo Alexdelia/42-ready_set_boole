@@ -1,5 +1,5 @@
 // add 2 u32 without using + operator
-fn adder(a: u32, b: u32) -> u32 {
+pub fn adder(a: u32, b: u32) -> u32 {
     let mut x = a;
     let mut carry = b;
     while carry != 0 {
@@ -59,8 +59,10 @@ carry = 3
 
 while carry != 0
     tmp = x ^ carry
-    //  = 1 ^ 3 = 2
-    //  = 0001 ^ 0011 = 0010
+    //  = 1 ^ 3
+    //  = 0001 ^ 0011
+    //  = 0010
+    //  = 2
     carry = (x & carry) << 1
     //    = (1 & 3) << 1
     //    = (0001 & 0011) << 1
@@ -68,4 +70,43 @@ while carry != 0
     //    = 0010 = 2
     x = tmp
 
+    // after first step:
+    // x = 2
+    // carry = 2
+
+    tmp = x ^ carry
+    //  = 2 ^ 2
+    //  = 0010 ^ 0010
+    //  = 0000
+    //  = 0
+    carry = (x & carry) << 1
+    //    = (2 & 2) << 1
+    //    = (0010 & 0010) << 1
+    //    = 0010 << 1
+    //    = 0100 = 4
+    x = tmp
+
+    // after second step:
+    // x = 0
+    // carry = 4
+
+    tmp = x ^ carry
+    //  = 0 ^ 4
+    //  = 0000 ^ 0100
+    //  = 0100
+    //  = 4
+    carry = (x & carry) << 1
+    //    = (0 & 4) << 1
+    //    = (0000 & 0100) << 1
+    //    = 0000 << 1
+    //    = 0000 = 0
+    x = tmp
+
+    // after third step:
+    // x = 4
+    // carry = 0
+
+    // carry == 0 -> exit loop
+
+    // return x // 4
 */
