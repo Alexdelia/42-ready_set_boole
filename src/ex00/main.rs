@@ -13,8 +13,8 @@ fn main() {
     println!(
         "{}",
         adder(
-            args().nth(1).unwrap().parse().unwrap(),
-            args().nth(2).unwrap().parse().unwrap()
+            args().nth(1).unwrap().parse::<u32>().unwrap(),
+            args().nth(2).unwrap().parse::<u32>().unwrap()
         )
     );
 }

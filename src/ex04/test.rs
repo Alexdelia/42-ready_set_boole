@@ -1,4 +1,3 @@
-use super::truth_table::print_truth_table;
 #[cfg(test)]
 mod truth_table {
     use crate::ex04::truth_table::print_truth_table;

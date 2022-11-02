@@ -19,7 +19,17 @@ name = "ex00"
 path = "src/ex00/main.rs"
 
 [[bin]]
+name = "ex01"
+path = "src/ex01/main.rs"
+
+[[bin]]
+name = "ex02"
+path = "src/ex02/main.rs"
+
+[[bin]]
+name = "ex03"
+path = "src/ex03/main.rs"
+
+[[bin]]
 name = "ex04"
 path = "src/ex04/main.rs"
-
-
