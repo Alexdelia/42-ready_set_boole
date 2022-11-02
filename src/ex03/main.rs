@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod gray_code {
+mod boolean_evaluation {
     use crate::ex03::boolean_evaluation::eval_formula;
 
     #[test]

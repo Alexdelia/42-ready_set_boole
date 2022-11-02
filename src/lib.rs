@@ -14,6 +14,11 @@ mod ex02 {
 }
 
 mod ex03 {
-    mod boolean_evaluation;
+    pub mod boolean_evaluation;
     mod main;
+}
+
+mod ex04 {
+    mod main;
+    mod truth_table;
 }
