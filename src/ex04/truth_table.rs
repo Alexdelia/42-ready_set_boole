@@ -32,7 +32,7 @@ pub fn print_truth_table(formula: &str) {
         print!("| {} ", var[i]);
     }
     println!("| = |");
-    for i in 0..var.len() {
+    for _ in 0..var.len() {
         print!("|---");
     }
     println!("|---|");
@@ -40,6 +40,16 @@ pub fn print_truth_table(formula: &str) {
         for i in 0..var.len() {
             print!("| {} ", row[i] as u8);
         }
-        println!("| {} |", 1);
+        {
+            let mut f: String = formula.to_string();
+            for i in 0..var.len() {
+                if row[i] {
+                    f = f.replace(var[i], "1");
+                } else {
+                    f = f.replace(var[i], "0");
+                }
+            }
+            println!("| {} |", eval_formula(&f) as u8);
+        }
     }
 }

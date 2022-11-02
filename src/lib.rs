@@ -1,24 +1,24 @@
-mod ex00 {
+pub mod ex00 {
     pub mod adder;
-    mod main;
+    mod test;
 }
 
-mod ex01 {
-    mod main;
-    mod multiplier;
+pub mod ex01 {
+    pub mod multiplier;
+    mod test;
 }
 
-mod ex02 {
-    mod gray_code;
-    mod main;
+pub mod ex02 {
+    pub mod gray_code;
+    mod test;
 }
 
-mod ex03 {
+pub mod ex03 {
     pub mod boolean_evaluation;
-    mod main;
+    mod test;
 }
 
-mod ex04 {
-    mod main;
-    mod truth_table;
+pub mod ex04 {
+    mod test;
+    pub mod truth_table;
 }

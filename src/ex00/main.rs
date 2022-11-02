@@ -1,42 +1,20 @@
-#[cfg(test)]
-mod adder {
-    use crate::ex00::adder::adder;
+use ready_set_boole::ex00::adder::adder;
+use std::env::args;
 
-    #[test]
-    fn basic() {
-        assert_eq!(adder(1, 3), 4);
-    }
-
-    #[test]
-    fn two_zero() {
-        assert_eq!(adder(0, 0), 0);
-    }
-
-    #[test]
-    fn one_zero() {
-        assert_eq!(adder(0, 42), 42);
-    }
-
-    #[test]
-    fn one_zero_reverse() {
-        assert_eq!(adder(42, 0), 42);
-    }
-
-    #[test]
-    fn two_max() {
-        assert_eq!(
-            adder(u32::max_value(), u32::max_value()),
-            u32::max_value() + u32::max_value()
+fn main() {
+    if args().len() != 3 {
+        println!(
+            "usage: \x1b[1m{} \x1b[35m<a: u32> <b: u32>\x1b[0m",
+            args().next().unwrap()
         );
+        return;
     }
 
-    #[test]
-    fn one_max() {
-        assert_eq!(adder(u32::max_value(), 42), u32::max_value() + 42);
-    }
-
-    #[test]
-    fn one_max_reverse() {
-        assert_eq!(adder(42, u32::max_value()), 42 + u32::max_value());
-    }
+    println!(
+        "{}",
+        adder(
+            args().nth(1).unwrap().parse().unwrap(),
+            args().nth(2).unwrap().parse().unwrap()
+        )
+    );
 }
